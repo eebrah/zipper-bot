@@ -3,10 +3,10 @@ require 'open-uri'
 require 'json'
 
 
-class Np
+class Np_libre
   include Cinch::Plugin
 
-  match /np\ ?(.*)/ 
+  match /np_libre\ ?(.*)/ 
             
   def execute(m, nick)
 
@@ -16,7 +16,9 @@ class Np
       b = nick
     end
 
-    we = open("http://ajax.last.fm/user/#{b}/now") { |f| JSON.parse f.read }
+#    we = open("http://ajax.last.fm/user/#{b}/now") { |f| JSON.parse f.read }
+    
+    we = open("http://libre.fm/2.0/?method=user.getrecenttracks&format=json&user=#{b}&limit=1") { |f| JSON.parse f.read }
 
     m.reply " #{b} is listening to #{we["track"]["name"]} by #{we["track"]["artist"]["name"]} "
 
