@@ -8,7 +8,7 @@ bot = Cinch::Bot.new do
 		c.server = "irc.freenode.net"
 		c.channels = ["#nairobilug"]
     c.plugins.prefix = /^@/
-		c.plugins.plugins = [Np, Messanger]
+		c.plugins.plugins = [Np, Messanger, Np_libre]
 	end
 end
 
