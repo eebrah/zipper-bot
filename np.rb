@@ -6,7 +6,7 @@ require 'json'
 class Np
   include Cinch::Plugin
 
-  match /np\ ?(.*)/ 
+  match /listening\ ?(.*)/ 
             
   def execute(m, nick)
 
