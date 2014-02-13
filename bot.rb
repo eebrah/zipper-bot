@@ -5,11 +5,13 @@ require_relative 'messanger'
 
 bot = Cinch::Bot.new do
 	configure do |c|
-		c.nick = "zipper|bot"
+		c.nick = "eebrah|bot"
 		c.server = "irc.freenode.net"
 		c.channels = ["#nairobilug"]
 		c.plugins.prefix = /^@/
+
 		c.plugins.plugins = [Np, Messanger, Np_libre]
+
 	end
 end
 
