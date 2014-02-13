@@ -10,7 +10,6 @@ class Np
             
   def execute(m, nick)
 
-
     if nick.strip.empty?
       b = m.user.nick
     else
@@ -19,7 +18,7 @@ class Np
 
     we = open("http://ajax.last.fm/user/#{b}/now") { |f| JSON.parse f.read }
 
-    m.reply " #{b} is listening to: '#{we["track"]["name"]}' by #{we["track"]["artist"]["name"]} "
+    m.reply "#{b} is listening to: \"#{we["track"]["name"]}\" by #{we["track"]["artist"]["name"]} "
 
   end
 end
